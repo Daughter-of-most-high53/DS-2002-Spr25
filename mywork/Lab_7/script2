@@ -1,0 +1,17 @@
+import boto3
+
+bucket = 'ds2002-wdz8uw'
+local_file = 'project/lily'
+s3_key = 'lily'  # This is the name it will have in the bucket
+
+s3 = boto3.client('s3', region_name='us-east-1')
+
+with open(local_file, 'rb') as f:
+    resp = s3.put_object(
+        Body=f,
+        Bucket=bucket,
+        Key=s3_key
+    )
+
+print("File uploaded!")
+
