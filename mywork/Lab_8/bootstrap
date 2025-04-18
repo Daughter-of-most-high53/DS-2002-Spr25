@@ -1,0 +1,9 @@
+#!/bin/bash
+
+apt update -y
+apt upgrade -y
+apt install -y python3-pip
+pip3 install boto3
+apt install -y python3
+apt install -y redis
+
